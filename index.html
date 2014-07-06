@@ -1,0 +1,139 @@
+
+<!doctype html>
+<html>
+<head>
+  <title>paper-tabs</title>
+  
+  <script src="./bower_components/platform/platform.js"></script>
+  
+  <link rel="import" href="./bower_components/core-icons/core-icons.html">
+  <link rel="import" href="bower_components/core-icons/iconsets/social-icons.html">
+
+
+  <link rel="import" href="./bower_components/core-scroll-header-panel/core-scroll-header-panel.html">
+  <link rel="import" href="./bower_components/paper-tabs/paper-tabs.html">
+  <link rel="import" href="./bower_components/core-toolbar/core-toolbar.html">
+  <link rel="import" href="./bower_components/paper-icon-button/paper-icon-button.html">
+  <link rel="import" href="./bower_components/font-roboto/roboto.html">
+  
+  <style shim-shadowdom>
+  
+    body {
+      font-family: RobotoDraft, 'Helvetica Neue', Helvetica, Arial;
+      margin: 0;
+      color: #333;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+      -webkit-tap-highlight-color: rgba(0,0,0,0);
+      -webkit-touch-callout: none;
+    }
+
+    paper-tabs {
+      background-color: #00bcd4;
+      color: #fff;
+      box-shadow: 0px 3px 2px rgba(0, 0, 0, 0.2);
+    }
+    
+    .tabs {
+      background-color: #00bcd4;
+    }
+    
+    core-toolbar paper-tabs {
+      box-shadow: none;
+    }
+    
+    core-scroll-header-panel {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+    }
+
+
+    core-scroll-header-panel::shadow #headerBg {
+      background-color: gray;
+    }
+    
+    /* background for toolbar when it is condensed */
+    core-scroll-header-panel::shadow #condensedHeaderBg {
+       background-color: #00bcd4;
+    }
+
+    core-icon {
+    fill: #9aed00;
+  }
+    
+    h3 {
+      font-size: 16px;
+      font-weight: 400;
+    }
+    
+    .filler {
+      height: 1000px;
+    }
+  </style>
+  
+</head>
+<body unresolved touch-action="auto">
+
+  <core-scroll-header-panel condenses keepCondensedHeader>
+  <core-toolbar class="tall">
+  
+    <paper-icon-button icon="menu"></paper-icon-button>
+    <div flex>gEECS</div>
+    <core-icon icon="social:post-facebook"></core-icon>
+    <paper-icon-button icon="social:post-twitter"></paper-icon-button>
+    <paper-icon-button icon="menu"></paper-icon-button>
+    <core-icon icon="social:cake"></core-icon>
+
+    <div class = "middle fit" horzontal center-justifies flex layout style="text-align: center">
+      Girls In Electrical Engineering and Computer Science 
+    </div>
+    
+    <div class="bottom fit tabs" horizontal center-justified flex layout>
+      <paper-tabs selected="0" flex style="max-width: 800px;">
+        <paper-tab>HOME</paper-tab>
+        <paper-tab>PROGRAMS & EVENTS</paper-tab>
+        <paper-tab>CONTACT</paper-tab>
+        <paper-tab>SPONSOR</paper-tab>
+      </paper-tabs>
+    </div>
+  
+  </core-toolbar>
+  
+  <div content>
+  
+  Content goes here...
+    
+    <div class="filler"></div>
+    
+    
+  </div>
+</core-scroll-header-panel>
+  
+
+  <!--<br>-->
+  <!--<br>-->
+  
+  <!--<core-toolbar class="tall">-->
+  
+  <!--  <paper-tabs selected="0" class="bottom indent" style="width: 200px;" self-end>-->
+  
+  <!--    <paper-tab>ITEM ONE</paper-tab>-->
+  <!--    <paper-tab>ITEM TWO</paper-tab>-->
+      
+  <!--  </paper-tabs>-->
+    
+  <!--  <div class="bottom" flex></div>-->
+    
+  <!--  <paper-icon-button class="bottom" icon="search"></paper-icon-button>-->
+      
+  <!--</core-toolbar>-->
+  
+  
+  
+</body>
+</html>
