@@ -2,138 +2,206 @@
 <!doctype html>
 <html>
 <head>
-  <title>paper-tabs</title>
+  <title>gEECS</title>
   
+  <!--Platform.js  contains polyfills (needed for polymer)-->
   <script src="./bower_components/platform/platform.js"></script>
   
+  <!--icons-->
   <link rel="import" href="./bower_components/core-icons/core-icons.html">
   <link rel="import" href="bower_components/core-icons/iconsets/social-icons.html">
+  <link rel="import" href="./bower_components/paper-icon-button/paper-icon-button.html">
 
-
+  <!--header/tab things-->
   <link rel="import" href="./bower_components/core-scroll-header-panel/core-scroll-header-panel.html">
   <link rel="import" href="./bower_components/paper-tabs/paper-tabs.html">
   <link rel="import" href="./bower_components/core-toolbar/core-toolbar.html">
-  <link rel="import" href="./bower_components/paper-icon-button/paper-icon-button.html">
+  
+  <!--Animated pages-->
+  <link rel="import" href="./bower_components/core-animated-pages/core-animated-pages.html">
+  <link rel="import" href="./bower_components/core-animated-pages/transitions/slide-from-right.html">
+
+  <!--page contents-->
+  <link rel="import" href="./my-elements/geecs-contact-card.html">
+  <link rel="import" href="./my-elements/geecs-contact-list.html">
+  
+  <!--font-->
   <link rel="import" href="./bower_components/font-roboto/roboto.html">
-  
-  <style shim-shadowdom>
-  
-    body {
-      font-family: RobotoDraft, 'Helvetica Neue', Helvetica, Arial;
-      margin: 0;
-      color: #333;
-      -webkit-user-select: none;
-      -moz-user-select: none;
-      -ms-user-select: none;
-      user-select: none;
-      -webkit-tap-highlight-color: rgba(0,0,0,0);
-      -webkit-touch-callout: none;
-    }
+  <link href='http://fonts.googleapis.com/css?family=Playfair+Display|Muli' rel='stylesheet' type='text/css'>
+  <!--<link href='http://fonts.googleapis.com/css?family=Muli' rel='stylesheet' type='text/css'>-->
 
-    paper-tabs {
-      background-color: #00bcd4;
-      color: #fff;
-      box-shadow: 0px 3px 2px rgba(0, 0, 0, 0.2);
-    }
-    
-    .tabs {
-      background-color: #00bcd4;
-    }
-    
-    core-toolbar paper-tabs {
-      box-shadow: none;
-    }
-    
-    core-scroll-header-panel {
-      position: absolute;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
-    }
+  <!--css-->
+  <link href="styles.css" rel="stylesheet">  
 
-
-    core-scroll-header-panel::shadow #headerBg {
-      background-color: gray;
-    }
-    
-    /* background for toolbar when it is condensed */
-    core-scroll-header-panel::shadow #condensedHeaderBg {
-       background-color: #00bcd4;
-    }
-
-    core-icon {
-    fill: #9aed00;
-  }
-    
-    h3 {
-      font-size: 16px;
-      font-weight: 400;
-    }
-    
-    .filler {
-      height: 1000px;
-    }
-  </style>
   
 </head>
 <body unresolved touch-action="auto">
-
   <core-scroll-header-panel condenses keepCondensedHeader>
-  <core-toolbar class="tall">
-  
-    <paper-icon-button icon="menu"></paper-icon-button>
-    <div flex>gEECS</div>
-    <core-icon icon="social:post-facebook"></core-icon>
-    <paper-icon-button icon="social:post-twitter"></paper-icon-button>
-    <paper-icon-button icon="menu"></paper-icon-button>
-    <core-icon icon="social:cake"></core-icon>
 
-    <div class = "middle fit" horzontal center-justifies flex layout style="text-align: center">
-      Girls In Electrical Engineering and Computer Science 
+    <core-toolbar class="tall">
+      <div flex style="color: white">gEECS</div>
+      <paper-icon-button icon="social:post-facebook"></paper-icon-button>
+      <paper-icon-button icon="social:post-twitter"></paper-icon-button>
+      <paper-icon-button icon="social:post-gplus"></paper-icon-button>
+  
+      <div class = "middle fit" horzontal center-justifies flex layout style="text-align: center">
+          <img src="./img/gEECS_Shirt_Front.png" style="width: 20%; top: 20px">
+      </div>
+      
+      <div class="bottom fit tabs" horizontal center-justified flex layout>
+        <paper-tabs selected="0" flex style="max-width: 800px;">
+          <paper-tab>HOME</paper-tab>
+          <paper-tab>PROGRAMS & EVENTS</paper-tab>
+          <paper-tab>CONTACT</paper-tab>
+          <paper-tab>SPONSOR</paper-tab>
+        </paper-tabs>
+      </div>
+    </core-toolbar>
+  
+    <div content>
+    <br>
+      <core-animated-pages transitions="slide-from-right">
+         
+         <!--HOME PAGE-->
+          <section>
+             <div class="card-container">
+               <div class="card">
+               <div horizontal layout>
+               <div flex style="padding: 20px">
+               <h2> Who Are We?</h2>
+
+                <p>
+                    <b>Girls in Electrical Engineering and Computer Science</b>, gEECS for short, was
+                    founded in 2002. We are a student-run organization at the University of Michigan dedicated to
+                    encouraging the professional, academic, and social development of women in technology-related
+                    fields of study.
+                </p>
+                <p>  
+                    In an effort to promote the education and success of technologically inclined women, gEECS 
+                    reaches out to women ranging from middle school girls to graduate students. Currently the 
+                    number of women in EECS is steadily decreasing and we hope to help change that.
+                    <br>
+                    <br>
+                    A huge thanks to our faculty advisors Dr. Emily Provost and Dr. Valeria Bertacco.
+                </p>
+                </div>
+                <div block style="width: 40%" horizontal layout center>
+                    <img src="./img/front-page.JPG" style="width: 100%;">
+               </div>
+                </div>
+               
+                
+         
+            </div>
+            <div horizontal layout>
+            <div class="card" flex vertical layout center>
+              <h2> Event Calendar</h2>
+              
+              <iframe src="https://www.google.com/calendar/embed?showTitle=0&amp;showNav=0&amp;showPrint=0&amp;showTabs=0&amp;showCalendars=0&amp;showTz=0&amp;height=600&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=sg9v2j308m74qglr9snq153omc%40group.calendar.google.com&amp;color=%238C500B&amp;ctz=America%2FIqaluit" style=" border-width:0; width: 100%; min-height: 300px"  frameborder="0" scrolling="no"></iframe>
+            </div>
+            <div class="card" flex vertical center layout>
+              <h2> Become a Member</h2>
+  
+                  <p> In order to make gEECS as accessible as possible for everyone, there are no dues or service hour requirements. </p>
+  
+                <p>
+                    Simply email the officers at <a href="mailto:geecs.officers@umich.edu?">
+                    geecs.officers@umich.edu</a>
+                    with your name, uniqname name,
+                    major, and estimated graduation date and then just start coming to functions!
+                    <br>
+                    <br> See the About page for more details.
+                </p>
+              
+            </div>
+            </div>
+                     
+                           
+        <div class="card" vertical center layout>
+        <h2>Partner with gEECS</h2>
+            
+            <p>
+            Sponsorship is a great way to support our mission and reach out to our members. Through sponsorship, you can 
+            help gEECS organize events such as information sessions with your comapny, tech talks (lolol jk), outreach programs
+            and more. We are a University of Micigan something organzation,  (EDIT THIS RACHEL..) and so donating is secure and 
+            easy.
+            </p>
+            <br>
+            <br>
+            {{Learn more about working with gEECS}}
+            <br>
+            <br>
+            
+            <h3>Gold Sponsors</h3>
+           <div style="width: 80%">
+            <a href="http://www.google.com/edu/students/index.html">
+                <img src="http://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Logo_2013_Google.png/320px-Logo_2013_Google.png">
+            </a>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;
+            <a href="http://careers.microsoft.com/careers/en/us/collegehome.aspx">
+                <img src="http://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/Microsoft_logo_and_wordmark.svg/500px-Microsoft_logo_and_wordmark.svg.png">
+            </a>
+            </div>
+             <br>
+
+            <h3>Silver Sponsors</h3>
+            <br>
+            <h1 style="width:20%">
+                <img src="http://asme.berkeley.edu/wordpress/wp-content/uploads/2013/11/national-instruments-corp-logo.jpg" style= "width: 100%">
+            </h1>
+        </div>
+        </div>
+            
+          </section>
+          
+          <!--EVENTS PAGE-->
+          <section>
+            <div class="card-container">
+             sdfsdfsd  
+               
+              
+              </div>
+          </section>
+          
+          <!--CONTACT US PAGE -->
+          <section>
+             <div class="card-container">
+             
+             <geecs-contact-list></geecs-contact-list>
+             
+            </div>
+          </section>
+          
+          
+          <!--SPONSOR US PAGE-->
+          <section>
+            <div layout vertical center class="filler">
+              <div> lallala</div>
+            </div>
+          </section>
+          <section>
+          </div>
+        </core-animated-pages>
     </div>
     
-    <div class="bottom fit tabs" horizontal center-justified flex layout>
-      <paper-tabs selected="0" flex style="max-width: 800px;">
-        <paper-tab>HOME</paper-tab>
-        <paper-tab>PROGRAMS & EVENTS</paper-tab>
-        <paper-tab>CONTACT</paper-tab>
-        <paper-tab>SPONSOR</paper-tab>
-      </paper-tabs>
-    </div>
+  </core-scroll-header-panel>
   
-  </core-toolbar>
-  
-  <div content>
-  
-  Content goes here...
-    
-    <div class="filler"></div>
-    
-    
-  </div>
-</core-scroll-header-panel>
-  
+  <script>
+    var tabs = document.querySelector('paper-tabs');
 
-  <!--<br>-->
-  <!--<br>-->
-  
-  <!--<core-toolbar class="tall">-->
-  
-  <!--  <paper-tabs selected="0" class="bottom indent" style="width: 200px;" self-end>-->
-  
-  <!--    <paper-tab>ITEM ONE</paper-tab>-->
-  <!--    <paper-tab>ITEM TWO</paper-tab>-->
-      
-  <!--  </paper-tabs>-->
+    tabs.addEventListener('core-select', function() {
+      console.log(tabs.selected);
+      stuff(tabs.selected);
+    });
     
-  <!--  <div class="bottom" flex></div>-->
-    
-  <!--  <paper-icon-button class="bottom" icon="search"></paper-icon-button>-->
+
+    function stuff(nextTab) {
+      var p = document.querySelector('core-animated-pages');
       
-  <!--</core-toolbar>-->
+      // decide to slide right or left
   
-  
-  
+      p.selected = nextTab;
+    }
+  </script>
 </body>
 </html>

@@ -1,0 +1,69 @@
+<link rel="import" href="../bower_components/polymer/polymer.html">
+
+<polymer-element name="geecs-contact-card" attributes="name position year email major">
+ <template>
+    <style>
+    
+    :host {
+      display: block;
+      position: relative;
+      background-color: white;
+      padding: 20px;
+      margin: 10px;
+      min-width: 250px;
+      max-width: 300px;
+      height: auto;
+      font-size: 1.2rem;
+      font-weight: 300;
+    }
+    
+    h3, h4,p {
+      margin: 0px 2px;
+    }
+    
+    .img-wrapper {
+    width: 200px;
+    height: 200px;
+    overflow: hidden;
+    border-radius: 50%;
+    margin: 10px;
+    }
+  
+    
+    </style>
+    
+    <!-- CARD CONTENTS GO HERE -->
+      <div class="card" layout vertical center>
+      
+        <div class="img-wrapper">
+          <content select="img"></content>
+        </div>
+        <h3> {{name}}</h3>
+        <h4>{{position}}</h4>
+        <p> 
+          {{year}} majoring in {{major}} 
+          <br> 
+          </p>
+          <p>
+          <!--TODO update this link-->
+          <a href="#"> {{email}}@umich.edu </a>
+        </p>
+        <!--<content>-->
+          <!--Fun fact / Bio goes here-->
+        <!--</content>-->
+      </div>
+
+      
+    </div>
+  </template>
+  <script>
+  Polymer('geecs-contact-card', {
+    name: "Name mising",
+    position: "Supreme Overlord",
+    year: "Year Missing",
+    email: "example",
+    major: "EECS"
+  });
+  </script>
+
+</polymer-element>

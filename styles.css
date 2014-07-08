@@ -1,0 +1,98 @@
+
+/* Good fonts
+*  playfair display + muli
+*
+*/
+
+ /*GENERAL*/
+body {
+  font-family: Muli, 'Comic Sans';
+  margin: 0;
+  color: #333;
+  background-color: #eee;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  -webkit-touch-callout: none;
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Playfair Display', cursive;
+}
+
+/*TABS*/
+paper-tabs {
+  background-color: #B565A7;
+  color: #fff;
+  box-shadow: 0px 3px 2px rgba(0, 0, 0, 0.2);
+}
+
+.tabs {
+  background-color: #B565A7;
+}
+
+core-toolbar paper-tabs {
+  box-shadow: none;
+}
+
+
+/*HEADER PANEL*/
+core-scroll-header-panel {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+core-scroll-header-panel::shadow #headerBg {
+  background-color: white;
+}
+
+/* background for toolbar when it is condensed */
+core-scroll-header-panel::shadow #condensedHeaderBg {
+   background-color: #B565A7;
+}
+
+
+
+
+/*PAGES*/
+
+.card-container {
+  max-width:  75%;
+  margin: auto;
+}
+
+.card {
+  box-sizing: border-box;
+  display: block;
+  position: relative;
+  background-color: white;
+  padding: 20px;
+  margin: 20px;
+  
+  font-size: 1.2rem;
+  font-weight: 300;
+}
+
+
+.left {
+  float: left;
+}
+
+.right {
+  float: right;
+}
+
+.left h2,
+.right h2 {
+  text-align: center;
+}
+
+.filler {
+  min-height: 1000px;
+  background-color: #eee;
+}
