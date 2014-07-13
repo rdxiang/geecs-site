@@ -8,7 +8,7 @@
     
     </style>
     
-    <div horizontal center-justified layout wrap fullbleed >
+    <div horizontal center-justified layout wrap fullbleed  >
        <template repeat="{{contact_info as person}}">
          <geecs-contact-card 
           name={{person.name}}
@@ -27,6 +27,8 @@
   
   <script>
   Polymer('geecs-contact-list', {
+    
+    
     contact_info: [
         { name: 'Rachael Miller', position: 'President' , 
         year: 'Senior',major: 'CS', email: 'mrachael' , 

@@ -11,6 +11,7 @@
   <link rel="import" href="./bower_components/core-icons/core-icons.html">
   <link rel="import" href="bower_components/core-icons/iconsets/social-icons.html">
   <link rel="import" href="./bower_components/paper-icon-button/paper-icon-button.html">
+  <link rel="import" href="./bower_components/paper-button/paper-button.html">
 
   <!--header/tab things-->
   <link rel="import" href="./bower_components/core-scroll-header-panel/core-scroll-header-panel.html">
@@ -24,6 +25,7 @@
   <!--page contents-->
   <link rel="import" href="./my-elements/geecs-contact-card.html">
   <link rel="import" href="./my-elements/geecs-contact-list.html">
+  <link rel="import" href="./my-elements/geecs-event-cards.html">
   
   <!--font-->
   <link rel="import" href="./bower_components/font-roboto/roboto.html">
@@ -51,7 +53,7 @@
       <div class="bottom fit tabs" horizontal center-justified flex layout>
         <paper-tabs selected="0" flex style="max-width: 800px;">
           <paper-tab>HOME</paper-tab>
-          <paper-tab>PROGRAMS & EVENTS</paper-tab>
+          <paper-tab>WHAT WE DO</paper-tab>
           <paper-tab>CONTACT</paper-tab>
           <paper-tab>SPONSOR</paper-tab>
         </paper-tabs>
@@ -80,9 +82,6 @@
                     In an effort to promote the education and success of technologically inclined women, gEECS 
                     reaches out to women ranging from middle school girls to graduate students. Currently the 
                     number of women in EECS is steadily decreasing and we hope to help change that.
-                    <br>
-                    <br>
-                    A huge thanks to our faculty advisors Dr. Emily Provost and Dr. Valeria Bertacco.
                 </p>
                 </div>
                 <div block style="width: 40%" horizontal layout center>
@@ -109,8 +108,7 @@
                     geecs.officers@umich.edu</a>
                     with your name, uniqname name,
                     major, and estimated graduation date and then just start coming to functions!
-                    <br>
-                    <br> See the About page for more details.
+                    
                 </p>
               
             </div>
@@ -120,20 +118,19 @@
         <div class="card" vertical center layout>
         <h2>Partner with gEECS</h2>
             
-            <p>
+            <p style="width: 70%">
             Sponsorship is a great way to support our mission and reach out to our members. Through sponsorship, you can 
-            help gEECS organize events such as information sessions with your comapny, tech talks (lolol jk), outreach programs
-            and more. We are a University of Micigan something organzation,  (EDIT THIS RACHEL..) and so donating is secure and 
+            help gEECS organize events such as Meet & Greets with company representatives, outreach programs, study days
+            and more. We are a University of Micigan sponsored organization and so donating is secure and 
             easy.
             </p>
-            <br>
-            <br>
-            {{Learn more about working with gEECS}}
+          
+            To learn more, please click on our sponsor tab.
             <br>
             <br>
             
             <h3>Gold Sponsors</h3>
-           <div style="width: 80%">
+           <div style="width: 70%" layout horizontal>
             <a href="http://www.google.com/edu/students/index.html">
                 <img src="http://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Logo_2013_Google.png/320px-Logo_2013_Google.png">
             </a>
@@ -146,7 +143,7 @@
 
             <h3>Silver Sponsors</h3>
             <br>
-            <h1 style="width:20%">
+            <h1 style="width:30%">
                 <img src="http://asme.berkeley.edu/wordpress/wp-content/uploads/2013/11/national-instruments-corp-logo.jpg" style= "width: 100%">
             </h1>
         </div>
@@ -157,26 +154,90 @@
           <!--EVENTS PAGE-->
           <section>
             <div class="card-container">
-             sdfsdfsd  
-               
+            <div class="card">
+              <h2> What We Do</h2>
+              gEECS organizes a variety of social, professional, and academic events for our members. To check what events we're holding, please check the calendar
+              on our front page. For even more EECS events and opportunities, please check the gEECS facebook page and our weekly member emails. 
+              <br>
+              <br>
+              Learn more about
+              our past initiatives by clicking on the cards below.
               
+            </div>
+             <geecs-event-cards></geecs-event-cards>
+               
+                
               </div>
           </section>
           
           <!--CONTACT US PAGE -->
           <section>
-             <div class="card-container">
-             
-             <geecs-contact-list></geecs-contact-list>
-             
+             <div class="card-container" layout center vertical>
+              
+              <div class="card" >
+                <h2> Get in Touch with gEECS</h2>
+                
+                <p>
+                 Whether you'd like to tell us about an upcoming event, give us a helping hand, or just have a question, 
+                  please send us an email at <a href="#"> geecs.officers@umich.edu</a>.
+                  <br> <br>
+                  Our office is located in room 1645 Betty Beyster Building (first floor of BBB across from staircase) on the University of Michigan North Campus.
+                  
+                </p>
+                
+              </div>
+              
+              <h2> Our Board Members</h2>
+                 <geecs-contact-list></geecs-contact-list>
+           
+            
             </div>
           </section>
           
           
           <!--SPONSOR US PAGE-->
           <section>
-            <div layout vertical center class="filler">
-              <div> lallala</div>
+           <div class="card-container" layout center vertical>
+              <div class="card">
+              <h2>Become A Sponsor</h2>
+              
+               Our members have had incredible opportunities through our sponsors. These range from talking with industry representatives, to going to the Grace Hopper Conference.
+              Our organization tries our very best to provide everything free of cost to our members. In order to keep offering great resources and opportunities, we 
+              rely on external financial support to acheive our mission. 
+              
+              <br>
+              <br>
+              If you have any 
+              questions, comments or concerns, please email us at geecs.officers@umich.edu. We'll be happy to answer your question and walk you through the process.
+              
+              </div>
+              <div horizontal layout >
+                  <div class="card" vertical center-justified layout>
+                  <h3> Why</h3>
+                  For companies, sponsoring gEECS comes with additional benefits. These range from receving a resume book of all of our ~80 members, to being able to sponsor
+                  Meet & Greet events, to being featured on our website and weekly e-mails. We have a variety of sponsorship tiers, and more details can be found in our sponsorhip guide 
+                  below. 
+                  <br>
+                  <a href="https://docs.google.com/a/umich.edu/file/d/0BwGxrhU-xzPiVG5jV0xlOF9KbzQ/preview" target="_blank">
+                  <paper-button label="View Sponsor Guide" raisedButton style="width: 90%;"> View Sponsor Guide</paper-button>
+                  </a>
+                    
+                  </div>
+                  <div class = "card" vertical center-justified layout>
+                  <h3> How</h3>
+                  The process of becoming a sponsor is simple and secure. We are officially a University Sponsored Organiztion, which means that donations can be made through
+                  the University of Michigan website. We ask that sponsors fill out a short form before donating so we can get to know you and thank you. 
+                  <br>
+                  
+                  <a href="https://docs.google.com/a/umich.edu/forms/d/1X7_h6oyTWTTx3SGo3vzt2dt3fW8l9LootEWJbvA1zvo/viewform" target="_blank">
+                  <paper-button label="DONATE" raisedButton style="width: 90%;"> </paper-button>
+                  </a>
+                  
+                    
+                  </div>
+                  
+                
+              </div>
             </div>
           </section>
           <section>

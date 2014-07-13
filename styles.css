@@ -47,14 +47,41 @@ core-scroll-header-panel {
   left: 0;
 }
 
+/* background for toolbar when it is at its full size */
 core-scroll-header-panel::shadow #headerBg {
   background-color: white;
 }
 
 /* background for toolbar when it is condensed */
 core-scroll-header-panel::shadow #condensedHeaderBg {
-   background-color: #B565A7;
+  background-color: #B565A7;
 }
+
+core-toolbar {
+
+  background-color: transparent;
+}
+    
+
+
+
+/*BUTTONS*/
+
+paper-button[raisedButton] {
+      margin: 1em;
+      background: #B565A7;
+      color: #fff;
+    }
+
+    paper-button[raisedButton] #ripple,
+    paper-button[raisedButton]::shadow #ripple {
+      color: #eeee00;
+    }
+
+    paper-button[raisedButton] #focusBg,
+    paper-button[raisedButton]::shadow #focusBg {
+      background: #B565A7;
+    }
 
 
 
@@ -62,8 +89,10 @@ core-scroll-header-panel::shadow #condensedHeaderBg {
 /*PAGES*/
 
 .card-container {
-  max-width:  75%;
+  width: 75%;
+  max-width:  1200px;
   margin: auto;
+
 }
 
 .card {

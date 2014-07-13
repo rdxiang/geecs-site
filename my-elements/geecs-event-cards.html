@@ -1,0 +1,279 @@
+
+<!--dependencies-->
+  <link rel="import" href="../bower_components/core-icons/core-icons.html">
+  <link rel="import" href="../bower_components/paper-icon-button/paper-icon-button.html">
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+<polymer-element name="geecs-event-cards">
+  <template>
+
+    <style>
+    
+      :host {
+        
+      }
+      .chip-container {
+        position: relative;
+        top: 50px;
+        right: 0;
+        left: 0;
+        text-align: center;
+        margin-bottom: 300px;
+        
+      }
+      
+    
+      .chip {
+        cursor: pointer;
+        height: 300px;
+        width: 30%;
+        display: inline-block;
+        position: relative;
+        border-radius: 3px;
+        margin: 4px;
+        overflow: hidden;
+        text-align: start;
+        background-color: #fff;
+        box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.16);
+      }
+
+      
+      .chip-top {
+        width: 100%;
+        height: 200px;
+      }
+
+      .chip-bottom {
+        padding: 8px;
+        line-height: 1.5;
+      }
+
+      .chip-album-title {
+        font-weight: bold;
+      }
+
+      #details {
+        width: 100%
+        padding: 0px 10% 0;
+      }
+
+      .card {
+        margin-bottom: 50px;
+        max-height: 650px;
+        border-radius: 3px;
+        text-align: start;
+        overflow: hidden;
+        background: #fff;
+        box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      }
+
+      .card-left {
+        width: 300px;
+      }
+
+      .card-right {
+        padding: 24px;
+        overflow: auto;
+      }
+
+      .card-icon {
+        border-radius: 50%;
+        width: 60px;
+        height: 60px;
+        margin-right: 16px;
+      }
+
+      .card-album-title {
+        font-size: 2em;
+      }
+      
+      .event-image {
+        background-position: center;
+        background-size: cover;
+      }
+      
+      #eventDescription {
+        overflow-y: auto;
+        padding: 20px;
+      }
+      
+      .invisible {
+        display: none;
+        
+      }
+    </style>
+
+    <core-animated-pages selected="{{page}}" transitions="hero-transition" on-core-animated-pages-transition-end="{{complete}}">
+
+      <section>
+
+        <div class="chip-container" hero-p>
+
+          <template repeat="{{items as item}}">
+
+            <div class="chip" hero-id="{{item.artist}}-{{item.album}}" hero?="{{selected === item }}" on-tap="{{transition}}">
+              <div class="chip-top event-image" style="background-image: url('{{item.imgsrc}}'); " hero-id="{{item.artist}}-{{item.album}}-art" hero?="{{selected === item}}"></div>
+              <div class="chip-bottom">
+                <div class="chip-album-title">{{item.album}}</div>
+                <div class="chip-artist">{{item.artist}}</div>
+              </div>
+            </div>
+
+          </template>
+
+        </div>
+      </section>
+
+      <section id="details">
+
+        <div class="card" layout horizontal hero-id="{{selected.artist}}-{{selected.album}}" hero >
+          <div class="card-left event-image" style="background-image: url({{selected.imgsrc}});" hero-id="{{selected.artist}}-{{selected.album}}-art" hero>
+            <!--<img src=" {{selected.imgsrc}}" height=500>-->
+            
+          </div>
+          <div class="card-right" flex>
+            <div layout horizontal center>
+              <div flex>
+                <div horizontal layout>
+                  <div class="card-album-title" flex >{{selected.album}}</div>
+                  <paper-icon-button icon="close" on-tap="{{transition}}"></paper-icon-button>
+                </div>
+                <div class="card-album-artist">{{selected.artist}}</div>
+                
+                <div id= "eventDescription"> 
+      
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </section>
+
+    </core-animated-pages>
+    
+  <div id="mentor" class = "invisible" >  
+      We created out mentor/mentee program to  
+      support female EECS with a mentor or mentee to assist in their academic, social, and career decisions. 
+      We support a wide range of students: from undeclared students who are interested in EECS, to 
+      declared students, to graduate students. 
+      
+      <h3> How it works</h3>
+      We match mentors and mentees based on
+      interests, goals, experience etc. Pairs are given freedom to do whatever they want, though mentees and 
+      mentors are asked to meet at least three times a semester. Since meeting up at a cafe seems to work well, 
+      we provide Mujo's vouchers for free beverages for the pair to enjoy as they get to know each other and learn.
+      
+      <h3> For UMich Students</h3>
+      The 2013-2014 mentee/mentor application is now closed. Please check back later this year. The application will also be
+      in the weekly email once we open up the program.
+      
+      <h3> For Others Interested in Mentoring</h3>
+        If you aren't affiliated with UMich and would like to help out, please let us know by shooting us an email at
+        geecs.officers@umich.edu. We would be thrilled to expand our program. 
+    </div>
+   
+    <div id="girlsCode" class="invisible" >
+      We beleive it's important to raise interest in technology early on in a fun and helpful environment. That's why we began our {GirlsCode} 
+      series of events in fall 2013. We invited twenty high school girls for an afternoon of technology related events (and free lunch of course!).
+      Our first event was wonderfully successful - not only were the students able to explore their interest in EECS, but our 
+      members were able to share their share thier hard-earned knowledge and have a good time. 
+      
+      <h3> Fall 2013: Programming with Processing (CS)</h3>
+      For our first event, we held a workshop to introduce girls to programming. We used <a href="http://www.processing.org" target="_blank">Processing</a>, 
+      a programming language based on Java that aims to teach computer science in a fun, visual way. After teach the girls the basics of variables, functions, and loops,
+      they were able to use Processing to draw and animate to their hearts content. 
+      
+      
+      <h3> Winter 2014: Arduinos (EE) </h3>
+      
+      For our second event, we decided to hold an <a href="http://www.arduino.cc/" target="_blank">Arduino</a> workshop to teach girl
+      s about hardware and electrical engineering. This was a learning experience for many of our members as well,
+      as they'd never worked with Arduinos either.
+      During the workshop, the high school students worked together to learn about circuits, programming, and microcontrollers.
+      They hooked up LEDs, potentiometers, and a speaker to a breadboard 
+      and an Arduino, and were able to experiment with different combinations of circuits and to make tweaks in the Arduino code.
+      <br> <br>
+    
+     <small> Interested in more details? Check out the full
+      <a href="http://www.eecs.umich.edu/eecs/about/articles/2014/gEECS_Girls_Code.html" target="_blank">article</a>
+     on the UMich EECS page</small>
+    </div>
+    
+    
+    <div id="other" class="invisible" >  
+      Of course, we hold a variety of other events too, from profesional to academic to social. We try for at least one 
+      gEECS event a month. In the past we've worked with many other student organizations, from the Society of Women Engineers
+      to WolverineSoft. If you have an event you'd like us to know about, or if you have a suggestion for future events, please 
+      email us at geecs.officers@umich.edu.
+      
+      <h3> Past Events</h3>
+      We can't fit them all here, but this list should give you an idea of the types of events we do:
+      
+      
+      <ul>
+      <li>Social 
+        <ul>
+          <li>From ice skating, to crafts nights, to movie watching, and more.</li>
+        </ul>
+      </li>
+      <li>Professional
+        <ul>
+          <li> <b>Women In Tech Talks</b> -Hear from women working in the industry as they share their experiences, advice and cool stuff they've done.</li>
+          <li><b>Fall Company Mixer</b> -  Chat with representatives from members' most requested companies (Google, Intel, etc.) without the rush and lines of the career fair.</li>
+          <li><b>Resume and Interview Workshops</b> - Hear from recruiters and interviewers on how to land your next internship/job.</li>
+        </ul>
+      </li>
+      <li>Academic 
+        <ul>
+          <li><b>Welcome to EECS</b> - A nice way to meet up with recently declared girls and celebrate!</li>
+          <li><b>Study Days</b> - Meet up with other gEECS before midterms and finals for quiet studying, interspersed with relaxing activities and good food.</li>
+        </ul>
+      </li>
+      </ul>
+            
+    </div>
+  </template>
+  
+   
+  <script>
+    
+    Polymer('geecs-event-cards', {
+      page: 0,
+      
+      ready: function () {
+        this.m = $(this.$.mentor);
+        this.g = $(this.$.girlsCode);
+        this.o = $(this.$.other);
+        
+        console.log(this.g);
+        
+        this.items =  [
+        { artist: 'Building helpful relationships between gEECS', album: 'Mentor/Mentee Program',
+        imgsrc: 'http://i.imgur.com/NrvfcqO.jpg?1', description: this.m},
+        { artist: 'Reaching out to the next generation of women in technology', album: '{Girls Code}', 
+        imgsrc: 'http://i.imgur.com/zXQ74AP.jpg', color: '#7dd6fe',  description: this.g},
+        { artist: 'Helping gEECS prepare for career fairs, to socializing and more', album: 'Other Events', 
+        imgsrc: 'http://i.imgur.com/9D0eCOn.jpg?1' ,color: '#dc3c84', description: this.o}
+      ]
+      },
+
+      selected: null,
+
+      transition: function(e) {
+       //console.log(mentorDescription);
+          
+        if (this.page === 0) {
+          this.selected = e.target.templateInstance.model.item;
+          this.page = 1;
+          $(this.$.eventDescription).html( this.selected.description.html());
+          console.log($(this.$.other).html());
+          
+        } else {
+          this.page = 0;
+        }
+      }
+    });
+
+  </script>
+  </polymer-element>
