@@ -5,11 +5,16 @@
  <template>
     <style>
     
-    
+    .container{
+      max-width: 1200px;
+      height: auto;
+    }
     </style>
     
-    <div horizontal center-justified layout wrap fullbleed  >
+    <div class= "container" horizontal center-justified layout wrap fullbleed  >
        <template repeat="{{contact_info as person}}">
+        
+        <div>
          <geecs-contact-card 
           name={{person.name}}
           position= {{person.position}}
@@ -20,47 +25,51 @@
           <img src="{{person.imgsrc}}" width=200>
             Here's a fun fact! BLah blah blah bah blah blahb ah.
         </geecs-contact-card>
+        
+        </div>
       </template>
 
     </div>
   </template>
   
   <script>
+  
+  
   Polymer('geecs-contact-list', {
     
     
     contact_info: [
         { name: 'Rachael Miller', position: 'President' , 
         year: 'Senior',major: 'CS', email: 'mrachael' , 
-        imgsrc:'https://fbcdn-sphotos-e-a.akamaihd.net/hphotos-ak-xfp1/t1.0-9/10492452_10202976660072397_8122235437104950101_n.jpg' },
+        imgsrc:'../img/rmiller.jpg' },
         
         { name: 'Lauren Carlson', position: 'Vice President', 
         year: 'Senior' ,major: 'EE', email: 'lccarlso' ,
-        imgsrc: 'https://scontent-b.xx.fbcdn.net/hphotos-xap1/t1.0-9/10390314_10152175004440488_4617822412391786432_n.jpg' },
+        imgsrc: '../img/lcarlson.jpg' },
         
         { name: 'Catherine Fisher', position: 'Outreach Coordinator', 
         year: 'Senior', major: 'CS', email: 'cathfish',
-        imgsrc: 'https://scontent-a.xx.fbcdn.net/hphotos-xap1/t1.0-9/10505506_10152515236183188_4946463383021061392_n.jpg'},
+        imgsrc: '../img/cfisher.jpg'},
         
         {name: 'Rachael Havens', position: 'Outreach Coordinator',
           year: 'Junior', major: 'CS', email: 'rkhavens',
-          imgsrc: 'https://scontent-a.xx.fbcdn.net/hphotos-xaf1/t1.0-9/10487271_10201395166920642_3981149689982990448_n.jpg'},
+          imgsrc: '../img/rhavens.jpg'},
           
           {name: 'Rob Soltesz', position: 'Secretary',
           year: 'Senior', major: 'CS', email: 'rsoltesz',
-          imgsrc: 'https://scontent-b.xx.fbcdn.net/hphotos-xfp1/t1.0-9/1655836_10202626271713963_783045059_n.jpg'},
+          imgsrc: '../img/robs.jpg'},
           
           {name:'Bo-Ying Fu', position: 'Treasurer',
           year: 'Junior', major: 'CS', email: 'botatoes',
-          imgsrc: 'https://scontent-b.xx.fbcdn.net/hphotos-xpa1/t1.0-9/1526166_10152533204628765_1479305916_n.jpg'},
+          imgsrc: '../img/bfu.jpg'},
           
-          {name: 'Meredith Montecello', position: 'Media Officer',
+          {name: 'Meredith Monticello', position: 'Media Officer',
           year:'Senior', major: 'CS', email: 'monticme',
-          imgsrc: 'https://scontent-b.xx.fbcdn.net/hphotos-xfp1/t31.0-8/10380553_10152238286013660_3288718732228576596_o.jpg'},
+          imgsrc: '../img/mmonticello.jpg'},
           
           {name: 'Rachel Xiang', position: 'Webmaster',
           year: 'Sophomore', major: 'CS', email: 'rdxiang',
-          imgsrc: 'https://fbcdn-sphotos-g-a.akamaihd.net/hphotos-ak-xap1/t1.0-9/10407951_10152512495008958_5312137986140092588_n.jpg'}
+          imgsrc: '../img/rxiang.jpg'}
           
           
         

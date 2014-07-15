@@ -38,30 +38,6 @@ core-toolbar paper-tabs {
 }
 
 
-/*HEADER PANEL*/
-core-scroll-header-panel {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-}
-
-/* background for toolbar when it is at its full size */
-core-scroll-header-panel::shadow #headerBg {
-  background-color: white;
-}
-
-/* background for toolbar when it is condensed */
-core-scroll-header-panel::shadow #condensedHeaderBg {
-  background-color: #B565A7;
-}
-
-core-toolbar {
-
-  background-color: transparent;
-}
-    
 
 
 
@@ -107,7 +83,15 @@ paper-button[raisedButton] {
   font-weight: 300;
 }
 
+.half{
+  
+  width: 50%;
+}
 
+.full {
+  width: 100%;
+  
+}
 .left {
   float: left;
 }

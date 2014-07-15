@@ -9,7 +9,7 @@
   
   <!--icons-->
   <link rel="import" href="./bower_components/core-icons/core-icons.html">
-  <link rel="import" href="bower_components/core-icons/iconsets/social-icons.html">
+  <link rel="import" href="./bower_components/core-icons/iconsets/social-icons.html">
   <link rel="import" href="./bower_components/paper-icon-button/paper-icon-button.html">
   <link rel="import" href="./bower_components/paper-button/paper-button.html">
 
@@ -20,7 +20,7 @@
   
   <!--Animated pages-->
   <link rel="import" href="./bower_components/core-animated-pages/core-animated-pages.html">
-  <link rel="import" href="./bower_components/core-animated-pages/transitions/slide-from-right.html">
+  <link rel="import" href="./bower_components/core-animated-pages/transitions/cross-fade.html">
 
   <!--page contents-->
   <link rel="import" href="./my-elements/geecs-contact-card.html">
@@ -35,7 +35,44 @@
   <!--css-->
   <link href="styles.css" rel="stylesheet">  
 
-  
+  <style shim-shadowdom>
+
+   
+/*HEADER PANEL*/
+core-scroll-header-panel {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+/* background for toolbar when it is at its full size */
+core-scroll-header-panel::shadow #headerBg {
+  background-color: white;
+}
+
+/* background for toolbar when it is condensed */
+core-scroll-header-panel::shadow #condensedHeaderBg {
+  background-color: #B565A7;
+}
+
+core-toolbar {
+
+  background-color: transparent;
+}
+    
+    .error-message{
+      color: #B565A7;
+      margin: auto;
+      max-width: 500px;
+      padding: 30px;
+      background-color: white;
+      
+      
+    }
+
+  </style>
 </head>
 <body unresolved touch-action="auto">
   <core-scroll-header-panel condenses keepCondensedHeader>
@@ -51,7 +88,7 @@
       </div>
       
       <div class="bottom fit tabs" horizontal center-justified flex layout>
-        <paper-tabs selected="0" flex style="max-width: 800px;">
+        <paper-tabs selected="0"  style="width: 800px;">
           <paper-tab>HOME</paper-tab>
           <paper-tab>WHAT WE DO</paper-tab>
           <paper-tab>CONTACT</paper-tab>
@@ -62,7 +99,19 @@
   
     <div content>
     <br>
-      <core-animated-pages transitions="slide-from-right">
+    
+ <!--[if lt IE 9]>
+
+      <div class="error-message">
+        <h2> Sorry, Your browser is not supported. </h2>
+        Please view our site in a supported brower (Chrome, Firefox, Safari, IE10+). If that's not possible and you'd
+        like to learn more about us, please
+        contact us at <a href="#"> geecs.officers@umich.edu</a>. Thanks!
+        
+      </div>
+      <![endif]-->
+
+      <core-animated-pages transitions="cross-fade-all">
          
          <!--HOME PAGE-->
           <section>
@@ -85,32 +134,34 @@
                 </p>
                 </div>
                 <div block style="width: 40%" horizontal layout center>
-                    <img src="./img/front-page.JPG" style="width: 100%;">
+                    <img src="http://i.imgur.com/l8nkuIz.jpg?1" style="width: 100%;">
                </div>
                 </div>
                
                 
          
             </div>
-            <div horizontal layout>
-            <div class="card" flex vertical layout center>
+            <div class="full" horizontal layout>
+            <div class="card half" >
               <h2> Event Calendar</h2>
               
               <iframe src="https://www.google.com/calendar/embed?showTitle=0&amp;showNav=0&amp;showPrint=0&amp;showTabs=0&amp;showCalendars=0&amp;showTz=0&amp;height=600&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=sg9v2j308m74qglr9snq153omc%40group.calendar.google.com&amp;color=%238C500B&amp;ctz=America%2FIqaluit" style=" border-width:0; width: 100%; min-height: 300px"  frameborder="0" scrolling="no"></iframe>
             </div>
-            <div class="card" flex vertical center layout>
+            <div class="card half" >
+              <div class="full">
               <h2> Become a Member</h2>
   
-                  <p> In order to make gEECS as accessible as possible for everyone, there are no dues or service hour requirements. </p>
+                  In order to make gEECS as accessible as possible for everyone, there are no dues or service hour requirements. 
+                  <br>
+                  <br>
   
-                <p>
+                
                     Simply email the officers at <a href="mailto:geecs.officers@umich.edu?">
                     geecs.officers@umich.edu</a>
                     with your name, uniqname name,
                     major, and estimated graduation date and then just start coming to functions!
                     
-                </p>
-              
+              </div>
             </div>
             </div>
                      
@@ -131,13 +182,9 @@
             
             <h3>Gold Sponsors</h3>
            <div style="width: 70%" layout horizontal>
-            <a href="http://www.google.com/edu/students/index.html">
-                <img src="http://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Logo_2013_Google.png/320px-Logo_2013_Google.png">
-            </a>
+                <img src="http://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Logo_2013_Google.png/320px-Logo_2013_Google.png" style="width: 50%">
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;
-            <a href="http://careers.microsoft.com/careers/en/us/collegehome.aspx">
-                <img src="http://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/Microsoft_logo_and_wordmark.svg/500px-Microsoft_logo_and_wordmark.svg.png">
-            </a>
+                <img src="http://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/Microsoft_logo_and_wordmark.svg/500px-Microsoft_logo_and_wordmark.svg.png" style="width: 50%">
             </div>
              <br>
 
@@ -153,7 +200,7 @@
           
           <!--EVENTS PAGE-->
           <section>
-            <div class="card-container">
+            <div class="card-container" style = "width: 70%">
             <div class="card">
               <h2> What We Do</h2>
               gEECS organizes a variety of social, professional, and academic events for our members. To check what events we're holding, please check the calendar
@@ -174,7 +221,7 @@
           <section>
              <div class="card-container" layout center vertical>
               
-              <div class="card" >
+              <div class="card full" style="width: 100%" >
                 <h2> Get in Touch with gEECS</h2>
                 
                 <p>
@@ -188,8 +235,9 @@
               </div>
               
               <h2> Our Board Members</h2>
+                <div style= "max-width: 1200px">
                  <geecs-contact-list></geecs-contact-list>
-           
+           </div>
             
             </div>
           </section>
@@ -197,8 +245,8 @@
           
           <!--SPONSOR US PAGE-->
           <section>
-           <div class="card-container" layout center vertical>
-              <div class="card">
+           <div class="card-container" layout vertical>
+              <div class="card full">
               <h2>Become A Sponsor</h2>
               
                Our members have had incredible opportunities through our sponsors. These range from talking with industry representatives, to going to the Grace Hopper Conference.
@@ -211,8 +259,8 @@
               questions, comments or concerns, please email us at geecs.officers@umich.edu. We'll be happy to answer your question and walk you through the process.
               
               </div>
-              <div horizontal layout >
-                  <div class="card" vertical center-justified layout>
+              <div class = "full" horizontal layout >
+                  <div class="card half" vertical center-justified layout>
                   <h3> Why</h3>
                   For companies, sponsoring gEECS comes with additional benefits. These range from receving a resume book of all of our ~80 members, to being able to sponsor
                   Meet & Greet events, to being featured on our website and weekly e-mails. We have a variety of sponsorship tiers, and more details can be found in our sponsorhip guide 
@@ -223,7 +271,7 @@
                   </a>
                     
                   </div>
-                  <div class = "card" vertical center-justified layout>
+                  <div class = "card half" vertical center-justified layout>
                   <h3> How</h3>
                   The process of becoming a sponsor is simple and secure. We are officially a University Sponsored Organiztion, which means that donations can be made through
                   the University of Michigan website. We ask that sponsors fill out a short form before donating so we can get to know you and thank you. 
