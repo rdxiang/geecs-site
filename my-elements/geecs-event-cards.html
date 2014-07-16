@@ -25,7 +25,7 @@
     
       .chip {
         cursor: pointer;
-        height: 300px;
+        min-height: 300px;
         width: 30%;
         display: inline-block;
         position: relative;
@@ -59,7 +59,7 @@
 
       .card {
         margin-bottom: 50px;
-        max-height: 650px;
+        
         border-radius: 3px;
         text-align: start;
         overflow: hidden;
@@ -93,14 +93,33 @@
       }
       
       #eventDescription {
-        overflow-y: auto;
+        margin-top: 10px;
+        margin-bottom: 20px;
+        overflow-y: scroll;
         padding: 20px;
+        max-height: 500px;
       }
+    
+    .close {
+      color: #B565A7;
+      border: solid;
+      border-width: 1px;
+      border-radius: 20px;
+      height: 40px;
+      
+    }
       
       .invisible {
         display: none;
         
       }
+  
+  @media all and (max-width: 1000px)  {
+  .hide {
+    display: none;
+    }
+  }
+      
     </style>
 
     <core-animated-pages selected="{{page}}" transitions="hero-transition" on-core-animated-pages-transition-end="{{complete}}">
@@ -126,8 +145,8 @@
 
       <section id="details">
 
-        <div class="card" layout horizontal hero-id="{{selected.artist}}-{{selected.album}}" hero >
-          <div class="card-left event-image" style="background-image: url({{selected.imgsrc}});" hero-id="{{selected.artist}}-{{selected.album}}-art" hero>
+        <div class="card" layout horizontal hero-id="{{selected.artist}}-{{selected.album}}" hero  >
+          <div class="card-left  hide event-image" style="background-image: url({{selected.imgsrc}});" hero-id="{{selected.artist}}-{{selected.album}}-art" hero >
             <!--<img src=" {{selected.imgsrc}}" height=500>-->
             
           </div>
@@ -136,7 +155,7 @@
               <div flex>
                 <div horizontal layout>
                   <div class="card-album-title" flex >{{selected.album}}</div>
-                  <paper-icon-button icon="close" on-tap="{{transition}}"></paper-icon-button>
+                  <paper-icon-button class="close" icon="close" on-tap="{{transition}}"></paper-icon-button>
                 </div>
                 <div class="card-album-artist">{{selected.artist}}</div>
                 

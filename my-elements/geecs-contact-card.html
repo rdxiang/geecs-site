@@ -41,11 +41,14 @@
         </div>
         <h3> {{name}}</h3>
         <h4>{{position}}</h4>
+        
+        <template if= '{{year}}'>
         <p> 
           {{year}} majoring in {{major}} 
           <br> 
           </p>
           <p>
+          </template>
           <!--TODO update this link-->
           <a href="#"> {{email}}@umich.edu </a>
         </p>
@@ -61,7 +64,7 @@
   Polymer('geecs-contact-card', {
     name: "Name mising",
     position: "Supreme Overlord",
-    year: "Year Missing",
+    year: false,
     email: "example",
     major: "EECS"
   });

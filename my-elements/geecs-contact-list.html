@@ -1,7 +1,7 @@
 <link rel="import" href="../bower_components/polymer/polymer.html">
 <link rel="import" href="./geecs-contact-card.html">
 
-<polymer-element name="geecs-contact-list">
+<polymer-element name="geecs-contact-list" attributes= "advisors">
  <template>
     <style>
     
@@ -37,8 +37,11 @@
   
   Polymer('geecs-contact-list', {
     
-    
-    contact_info: [
+    advisors: false,
+    ready: function() {
+      
+      if (!this.advisors)
+      this.contact_info =  [
         { name: 'Rachael Miller', position: 'President' , 
         year: 'Senior',major: 'CS', email: 'mrachael' , 
         imgsrc:'../img/rmiller.jpg' },
@@ -69,12 +72,21 @@
           
           {name: 'Rachel Xiang', position: 'Webmaster',
           year: 'Sophomore', major: 'CS', email: 'rdxiang',
-          imgsrc: '../img/rxiang.jpg'}
-          
-          
+          imgsrc: '../img/rxiang.jpg'} 
+        ]
+        else 
+        this.contact_info = [
+          {name: "Dr. Emily Mower Provost", position: "Advisor", email: 'emilykmp',
+            imgsrc: '../img/eprovost.JPG'
+          },
+          {name: "Dr. Valeria Bertacco", position: 'Advisor', email: 'valeria',
+            imgsrc: '../img/vbertacco.jpg'},
+          {name: "Dr. Laura Balzano", position: "Advisor", email:'girasole',
+            imgsrc: '../img/lbalzano.jpg'
+          }
+          ]
         
-        
-      ]
+      }
   });
   </script>
 
