@@ -109,3 +109,23 @@ paper-button[raisedButton] {
   min-height: 1000px;
   background-color: #eee;
 }
+
+.images {
+    margin: auto;
+    height:auto;
+    width:auto;
+    max-width:160px;
+    max-height:130px;
+    padding: 4px;
+}
+.ibm{
+
+    max-height: 90px;
+}
+.top-sponsors {
+    margin: auto;
+    height:auto;
+    width:auto;
+    max-width:240px;
+    max-height:150px;
+}
