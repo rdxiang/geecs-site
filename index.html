@@ -2,351 +2,335 @@
 <!doctype html>
 <html>
 <head>
-  <title>gEECS</title>
-  
-  <!--Platform.js  contains polyfills (needed for polymer)-->
-  <script src="./bower_components/platform/platform.js"></script>
-  
-  <!--icons-->
-  <link rel="import" href="./bower_components/core-icons/core-icons.html">
-  <link rel="import" href="./bower_components/core-icons/iconsets/social-icons.html">
-  <link rel="import" href="./bower_components/paper-icon-button/paper-icon-button.html">
-  <link rel="import" href="./bower_components/paper-button/paper-button.html">
+    <title>gEECS</title>
 
-  <!--header/tab things-->
-  <link rel="import" href="./bower_components/core-scroll-header-panel/core-scroll-header-panel.html">
-  <link rel="import" href="./bower_components/paper-tabs/paper-tabs.html">
-  <link rel="import" href="./bower_components/core-toolbar/core-toolbar.html">
-  
-  <!--Animated pages-->
-  <link rel="import" href="./bower_components/core-animated-pages/core-animated-pages.html">
-  <link rel="import" href="./bower_components/core-animated-pages/transitions/cross-fade.html">
+    <!--Platform.js  contains polyfills (needed for polymer)-->
+    <script src="./bower_components/platform/platform.js"></script>
 
-  <!--page contents-->
-  <link rel="import" href="./my-elements/geecs-contact-card.html">
-  <link rel="import" href="./my-elements/geecs-contact-list.html">
-  <link rel="import" href="./my-elements/geecs-event-cards.html">
-  
-  <!--font-->
-  <link rel="import" href="./bower_components/font-roboto/roboto.html">
-  <link href='http://fonts.googleapis.com/css?family=Playfair+Display|Muli' rel='stylesheet' type='text/css'>
-  <!--<link href='http://fonts.googleapis.com/css?family=Muli' rel='stylesheet' type='text/css'>-->
+    <!--icons-->
+    <link rel="import" href="./bower_components/core-icons/core-icons.html">
+    <link rel="import" href="./bower_components/core-icons/iconsets/social-icons.html">
+    <link rel="import" href="./bower_components/paper-icon-button/paper-icon-button.html">
+    <link rel="import" href="./bower_components/paper-button/paper-button.html">
 
-  <!--css-->
-  <link href="styles.css" rel="stylesheet">  
+    <!--header/tab things-->
+    <link rel="import" href="./bower_components/core-scroll-header-panel/core-scroll-header-panel.html">
+    <link rel="import" href="./bower_components/paper-tabs/paper-tabs.html">
+    <link rel="import" href="./bower_components/core-toolbar/core-toolbar.html">
 
-  <style shim-shadowdom>
+    <!--Animated pages-->
+    <link rel="import" href="./bower_components/core-animated-pages/core-animated-pages.html">
+    <link rel="import" href="./bower_components/core-animated-pages/transitions/cross-fade.html">
 
-   
-/*HEADER PANEL*/
-core-scroll-header-panel {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-}
+    <!--page contents-->
+    <link rel="import" href="./my-elements/geecs-contact-card.html">
+    <link rel="import" href="./my-elements/geecs-contact-list.html">
+    <link rel="import" href="./my-elements/geecs-event-cards.html">
 
-/* background for toolbar when it is at its full size */
-core-scroll-header-panel::shadow #headerBg {
-  background-color: white;
-}
+    <!--font-->
+    <link rel="import" href="./bower_components/font-roboto/roboto.html">
+    <link href='http://fonts.googleapis.com/css?family=Playfair+Display|Muli' rel='stylesheet' type='text/css'>
+    <!--<link href='http://fonts.googleapis.com/css?family=Muli' rel='stylesheet' type='text/css'>-->
 
-/* background for toolbar when it is condensed */
-core-scroll-header-panel::shadow #condensedHeaderBg {
-  background-color: #B565A7;
-}
+    <!--css-->
+    <link href="styles.css" rel="stylesheet">
 
-core-toolbar {
-  background-color: transparent;
-}
-    
-.error-message{
-  color: #B565A7;
-  margin: auto;
-  max-width: 500px;
-  padding: 30px;
-  background-color: white;
-}
+    <style shim-shadowdom>
 
-.front-page-image {
-  background-image: url('http://i.imgur.com/l8nkuIz.jpg?1');
-  background-size: cover;
-  background-position: right;
-  width: 40%;
-  height: auto;
-}
+        /*HEADER PANEL*/
+        core-scroll-header-panel {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+        }
 
-.social a {
-  color: #555;
-}
-    
-@media all and (max-width: 1000px)  {
-  .hide {
-    display: none;
-  }
-}
+        /* background for toolbar when it is at its full size */
+        core-scroll-header-panel::shadow #headerBg {
+            background-color: white;
+        }
 
-  </style>
+        /* background for toolbar when it is condensed */
+        core-scroll-header-panel::shadow #condensedHeaderBg {
+            background-color: #B565A7;
+        }
+
+        core-toolbar {
+            background-color: transparent;
+        }
+
+        .error-message{
+            color: #B565A7;
+            margin: auto;
+            max-width: 500px;
+            padding: 30px;
+            background-color: white;
+        }
+
+        .front-page-image {
+            background-image: url('http://i.imgur.com/l8nkuIz.jpg?1');
+            background-size: cover;
+            background-position: right;
+            width: 40%;
+            height: auto;
+        }
+
+        .social a {
+            color: #555;
+        }
+
+        @media all and (max-width: 1000px)  {
+            .hide {
+                display: none;
+            }
+        }
+
+    </style>
 </head>
 <body unresolved touch-action="auto">
-  <core-scroll-header-panel condenses keepCondensedHeader>
+<core-scroll-header-panel condenses keepCondensedHeader>
 
-    <core-toolbar class="tall">
-      
-      <div flex class = "hide" style="color: white">gEECS</div>
-      <div class = "hide social">
-      <a href= "https://www.facebook.com/GirlsInElectricalEngineeringAndComputerScience" target="_blank">
-        <paper-icon-button icon="social:post-facebook" ></paper-icon-button></a>
-      <a href= "https://www.facebook.com/GirlsInElectricalEngineeringAndComputerScience" target="_blank">
-        <paper-icon-button icon="social:post-twitter"></paper-icon-button></a>
-      <a href= "https://twitter.com/girlsinEECS" target="_blank">
-        <paper-icon-button icon="social:post-gplus"></paper-icon-button></a>
-      </div>
-      <div class = "middle fit" horzontal center-justifies flex layout style="text-align: center">
-          <img src="./img/gEECS_Shirt_Front.png" style="max-width: 500px; top: 20px; min-width: 300px; width: 80%;">
-      </div>
-      
-      <div class="bottom fit tabs" horizontal center-justified flex layout>
+<core-toolbar class="tall">
+
+    <div flex class = "hide" style="color: white">gEECS</div>
+    <div class = "hide social">
+        <a href= "https://www.facebook.com/GirlsInElectricalEngineeringAndComputerScience" target="_blank">
+            <paper-icon-button icon="social:post-facebook" ></paper-icon-button></a>
+        <a href= "https://www.facebook.com/GirlsInElectricalEngineeringAndComputerScience" target="_blank">
+            <paper-icon-button icon="social:post-twitter"></paper-icon-button></a>
+        <a href= "https://twitter.com/girlsinEECS" target="_blank">
+            <paper-icon-button icon="social:post-gplus"></paper-icon-button></a>
+    </div>
+    <div class = "middle fit" horzontal center-justifies flex layout style="text-align: center">
+        <img src="./img/gEECS_Shirt_Front.png" style="max-width: 500px; top: 20px; min-width: 300px; width: 80%;">
+    </div>
+
+    <div class="bottom fit tabs" horizontal center-justified flex layout>
         <paper-tabs selected="0"  style="width: 800px;">
-          <paper-tab>HOME</paper-tab>
-          <paper-tab>WHAT WE DO</paper-tab>
-          <paper-tab>CONTACT</paper-tab>
-          <paper-tab>SPONSOR</paper-tab>
+            <paper-tab>HOME</paper-tab>
+            <paper-tab>WHAT WE DO</paper-tab>
+            <paper-tab>CONTACT</paper-tab>
+            <paper-tab>SPONSOR</paper-tab>
         </paper-tabs>
-      </div>
-    </core-toolbar>
-  
-    <div content>
-    <br>
-    
- <!--[if lt IE 9]>
+    </div>
+</core-toolbar>
+
+<div content>
+<br>
+
+<!--[if lt IE 9]>
 <div class="error-message">
-<h2> Sorry, Your browser is not supported. </h2>
-Please view our site in a supported brower (Chrome, Firefox, Safari, IE10+). If that's not possible and you'd
-like to learn more about us, please
-contact us at <a href="#"> geecs.officers@umich.edu</a>. Thanks!
+    <h2> Sorry, Your browser is not supported. </h2>
+    Please view our site in a supported brower (Chrome, Firefox, Safari, IE10+). If that's not possible and you'd
+    like to learn more about us, please
+    contact us at <a href="#"> geecs.officers@umich.edu</a>. Thanks!
 </div>
 <![endif]-->
 
-      <core-animated-pages transitions="cross-fade-all">
-         
-         <!--HOME PAGE-->
-          <section>
-             <div class="card-container">
-               <div class="card">
-               <div horizontal layout>
-               <div style="padding: 20px" flex>
-               <h2> Who We Are</h2>
+<core-animated-pages transitions="cross-fade-all">
 
-                <p>
-                    <b>Girls in Electrical Engineering and Computer Science</b>, gEECS for short, was
-                    founded in 2002. We are a student-run organization at the University of Michigan dedicated to
-                    encouraging the professional, academic, and social development of women in technology-related
-                    fields of study.
-                </p>
-                <p>  
-                    In an effort to promote the education and success of technologically inclined women, gEECS 
-                    reaches out to women ranging from middle school girls to graduate students. Currently the 
-                    number of women in EECS is steadily decreasing and we hope to help change that.
-                </p>
-                   <h3> We're moving! Our new URL is <a href="http://eecs.umich.edu/geecs"> eecs.umich.edu/geecs </a> </h3>
-                </div>
-                <div class="hide front-page-image" style="width: 40%" center>
-                    <!--<img  src="http://i.imgur.com/l8nkuIz.jpg?1" style="width: 100%;">-->
-               </div>
-                </div>
-               
-                
-         
-            </div>
-            <div class="full" horizontal layout>
-            <div class="card half" >
-              <h2> Event Calendar</h2>
-              
-              <iframe src="https://www.google.com/calendar/embed?showTitle=0&amp;showNav=0&amp;showPrint=0&amp;showTabs=0&amp;showCalendars=0&amp;showTz=0&amp;height=600&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=sg9v2j308m74qglr9snq153omc%40group.calendar.google.com&amp;color=%238C500B&amp;ctz=America%2FIqaluit" style=" border-width:0; width: 100%; min-height: 300px"  frameborder="0" scrolling="no"></iframe>
-            </div>
-            <div class="card half" >
-              <div class="full">
-              <h2> Become a Member</h2>
-  
-                  In order to make gEECS as accessible as possible for everyone, there are no dues or service hour requirements. 
-                  <br>
-                  <br>
-  
-                
-                    Simply email the officers at <a href="mailto:geecs.officers@umich.edu?">
-                    geecs.officers@umich.edu</a>
-                    with your name, uniqname name,
-                    major, and estimated graduation date and then just start coming to functions!
-                    
-              </div>
-            </div>
-            </div>
-                     
-                           
-        <div class="card" vertical center layout>
-        <h2>Partner with gEECS</h2>
-            
-            <p style="width: 70%">
-            Sponsorship is a great way to support our mission and reach out to our members. Through sponsorship, you can 
-            help gEECS organize events such as Meet & Greets with company representatives, outreach programs, study days
-            and more. We are a University of Micigan sponsored organization and so donating is secure and 
-            easy.
-            </p>
-          
-            To learn more, please click on our sponsor tab.
-            <br>
-            <br>
-            <h3 style="margin: 5px;"> Platinum Sponsors</h3>
-
-            <h1 style="width:60%" layout horizontal center-justified="">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTWb3pMIE-GCQQWUPjDGfK_IZagK8kcOYLGEsavWpq9ZcmTKdiP" class="top-sponsors">
-                <img src="http://www.freelogovectors.net/wp-content/uploads/2012/03/jpmorgan-chase-co-logo.jpg" class="top-sponsors">
-            </h1>
-
-
-            <div style="width: 90%" layout horizontal center-justified>
-            <div style="padding: 10px;" layout vertical>
-                <h3 style="margin: 5px;">Silver Sponsors</h3>
-                <img src="http://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Kellogg%27s.svg/293px-Kellogg%27s.svg.png" class="images">
-            </div>
-
-           <div style="padding: 10px;" layout vertical>
-               <h3 style="margin: 5px;">Bronze Sponsors</h3>
-                <img src="http://semiaccurate.com/assets/uploads/2011/07/Intel-logo.jpg" class="images">
-            </div>
-             <br>
-            </div>
-            <h3 style="margin: 5px;">Honorable Mention Sponsors</h3>
-            <h1 style="width:90%" layout horizontal wrap center-justified="">
-                <img src="http://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Logo_2013_Google.png/320px-Logo_2013_Google.png" class="images">
-                <img src="http://upload.wikimedia.org/wikipedia/commons/6/64/Cisco_logo.svg" class="images">
-                <img src="http://upload.wikimedia.org/wikipedia/commons/thumb/5/51/IBM_logo.svg/800px-IBM_logo.svg.png " class="images ibm" >
-                <img src="http://upload.wikimedia.org/wikipedia/commons/thumb/0/06/Facebook.svg/266px-Facebook.svg.png" class="images">
-                <img src="http://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/Microsoft_logo_and_wordmark.svg/500px-Microsoft_logo_and_wordmark.svg.png" class="images">
-                <img src="http://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Harris_Corporation_Logo.svg/512px-Harris_Corporation_Logo.svg.png" class="images">
-            </h1>
-        </div>
-        </div>
-            
-          </section>
-          
-          <!--EVENTS PAGE-->
-          <section>
-            <div class="card-container" style = "width: 70%">
+    <!--HOME PAGE-->
+    <section>
+        <div class="card-container">
             <div class="card">
-              <h2> What We Do</h2>
-              gEECS organizes a variety of social, professional, and academic events for our members. To check what events we're holding, please check the calendar
-              on our front page. For even more EECS events and opportunities, please check the gEECS facebook page and our weekly member emails. 
-              <br>
-              <br>
-              Learn more about
-              our past initiatives by clicking on the cards below.
-              
+                <div horizontal layout>
+                    <div style="padding: 20px" flex>
+                        <h2> Who We Are</h2>
+
+                        <p>
+                            <b>Girls in Electrical Engineering and Computer Science</b>, gEECS for short, was
+                            founded in 2002. We are a student-run organization at the University of Michigan dedicated to
+                            encouraging the professional, academic, and social development of women in technology-related
+                            fields of study.
+                        </p>
+                        <p>
+                            In an effort to promote the education and success of technologically inclined women, gEECS
+                            reaches out to women ranging from middle school girls to graduate students. Currently the
+                            number of women in EECS is steadily decreasing and we hope to help change that.
+                        </p>
+                        <!--<h3> We're moving! Our new URL is <a href="http://eecs.umich.edu/geecs"> eecs.umich.edu/geecs </a> </h3>-->
+                    </div>
+                    <div class="hide front-page-image" style="width: 40%" center>
+                        <!--<img  src="http://i.imgur.com/l8nkuIz.jpg?1" style="width: 100%;">-->
+                    </div>
+                </div>
             </div>
-             <geecs-event-cards></geecs-event-cards>
-               
-                
-              </div>
-          </section>
-          
-          <!--CONTACT US PAGE -->
-          <section>
-             <div class="card-container" layout center vertical>
-              
-              <div class="card full" style="width: 100%" >
-                <h2> Get in Touch with gEECS</h2>
-                
-                <p>
-                 Whether you'd like to tell us about an upcoming event, give us a helping hand, or just have a question, 
-                  please send us an email at <a href="#"> geecs.officers@umich.edu</a>.
-                  <br> <br>
-                  Our office is located in room 1645 Betty Beyster Building (first floor of BBB across from staircase) on the University of Michigan North Campus.
-                  
+
+            <div class="full" horizontal layout>
+                <div class="card half">
+                    <h2> Event Calendar</h2>
+                    <iframe src="https://www.google.com/calendar/embed?showTitle=0&amp;showNav=0&amp;showPrint=0&amp;showTabs=0&amp;showCalendars=0&amp;showTz=0&amp;height=600&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=sg9v2j308m74qglr9snq153omc%40group.calendar.google.com&amp;color=%238C500B&amp;ctz=America%2FIqaluit" style=" border-width:0; width: 100%; min-height: 300px"  frameborder="0" scrolling="no"></iframe>
+                </div>
+
+                <div class="card half" >
+                    <div class="full">
+                        <h2> Become a Member</h2>
+
+                        In order to make gEECS as accessible as possible for everyone, there are no dues or service hour
+                        requirements.
+                        <br>
+                        <br>
+                        Simply email the officers at <a href="mailto:geecs.officers@umich.edu?">
+                        geecs.officers@umich.edu</a>
+                        with your name, uniqname name,
+                        major, and estimated graduation date and then just start coming to functions!
+                    </div>
+                </div>
+            </div>
+
+            <div class="card" vertical center layout>
+                <h2>Partner with gEECS</h2>
+
+                <p style="width: 70%">
+                    Sponsorship is a great way to support our mission and reach out to our members. Through sponsorship, you can
+                    help gEECS organize events such as Meet & Greets with company representatives, outreach programs, study days
+                    and more. We are a University of Micigan sponsored organization and so donating is secure and
+                    easy.
                 </p>
-                
-              </div>
-              
-              <h2> Our Board Members</h2>
-                <div style= "max-width: 1200px; text-align: center;" >
-                 <geecs-contact-list></geecs-contact-list>
-                 <h2> Thank You to Our Advisors</h2>
-                  <geecs-contact-list advisors></geecs-contact-list>
-           </div>
-            
+
+                To learn more, please click on our sponsor tab.
+                <br>
+                <br>
+                <h3 style="margin: 5px;"> Platinum Sponsors</h3>
+
+                <h1 style="width:60%" layout horizontal center-justified="">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTWb3pMIE-GCQQWUPjDGfK_IZagK8kcOYLGEsavWpq9ZcmTKdiP" class="top-sponsors">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/07/J_P_Morgan_Chase_Logo_2008_1.svg/640px-J_P_Morgan_Chase_Logo_2008_1.svg.png" class="top-sponsors">
+                </h1>
+
+
+                <div style="width: 90%" layout horizontal center-justified>
+                    <div style="padding: 10px;" layout vertical>
+                        <h3 style="margin: 5px;">Silver Sponsors</h3>
+                        <img src="http://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Kellogg%27s.svg/293px-Kellogg%27s.svg.png" class="images">
+                    </div>
+
+                    <div style="padding: 10px;" layout vertical>
+                        <h3 style="margin: 5px;">Bronze Sponsors</h3>
+                        <img src="http://semiaccurate.com/assets/uploads/2011/07/Intel-logo.jpg" class="images">
+                    </div>
+                    <br>
+                </div>
+                <h3 style="margin: 5px;">Honorable Mention Sponsors</h3>
+                <h1 style="width:90%" layout horizontal wrap center-justified="">
+                    <img src="http://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Logo_2013_Google.png/320px-Logo_2013_Google.png" class="images">
+                    <img src="http://upload.wikimedia.org/wikipedia/commons/6/64/Cisco_logo.svg" class="images">
+                    <img src="http://upload.wikimedia.org/wikipedia/commons/thumb/5/51/IBM_logo.svg/800px-IBM_logo.svg.png" class="images ibm" >
+                    <img src="http://upload.wikimedia.org/wikipedia/commons/thumb/0/06/Facebook.svg/266px-Facebook.svg.png" class="images">
+                    <img src="http://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/Microsoft_logo_and_wordmark.svg/500px-Microsoft_logo_and_wordmark.svg.png" class="images">
+                    <img src="http://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Harris_Corporation_Logo.svg/512px-Harris_Corporation_Logo.svg.png" class="images">
+                </h1>
             </div>
-          </section>
-          
-          
-          <!--SPONSOR US PAGE-->
-          <section>
-           <div class="card-container" layout vertical>
-              <div class="card full">
-              <h2>Become A Sponsor</h2>
-              
-               Our members have had incredible opportunities through our sponsors. These range from talking with industry representatives, to going to the Grace Hopper Conference.
-              Our organization tries our very best to provide everything free of cost to our members. In order to keep offering great resources and opportunities, we 
-              rely on external financial support to acheive our mission. 
-              
-              <br>
-              <br>
-              If you have any 
-              questions, comments or concerns, please email us at geecs.officers@umich.edu. We'll be happy to answer your question and walk you through the process.
-              
-              </div>
-              <div class = "full" horizontal layout >
-                  <div class="card half" vertical center-justified layout>
-                  <h3> Why</h3>
-                  For companies, sponsoring gEECS comes with additional benefits. These range from receving a resume book of all of our ~80 members, to being able to sponsor
-                  Meet & Greet events, to being featured on our website and weekly e-mails. We have a variety of sponsorship tiers, and more details can be found in our sponsorhip guide 
-                  below. 
-                  <br>
-                  <a href="https://docs.google.com/a/umich.edu/file/d/0BwGxrhU-xzPiVG5jV0xlOF9KbzQ/preview" target="_blank">
-                  <paper-button label="View Sponsor Guide" raisedButton style="width: 90%;"> View Sponsor Guide</paper-button>
-                  </a>
-                    
-                  </div>
-                  <div class = "card half" vertical center-justified layout>
-                  <h3> How</h3>
-                  The process of becoming a sponsor is simple and secure. We are officially a University Sponsored Organiztion, which means that donations can be made through
-                  the University of Michigan website. We ask that sponsors fill out a short form before donating so we can get to know you and thank you. 
-                  <br>
-                  
-                  <a href="https://docs.google.com/a/umich.edu/forms/d/1X7_h6oyTWTTx3SGo3vzt2dt3fW8l9LootEWJbvA1zvo/viewform" target="_blank">
-                  <paper-button label="DONATE" raisedButton style="width: 90%;"> </paper-button>
-                  </a>
-                  
-                    
-                  </div>
-                  
-                
-              </div>
+        </div>
+    </section>
+
+
+    <!--EVENTS PAGE-->
+    <section>
+        <div class="card-container" style = "width: 70%">
+            <div class="card">
+                <h2> What We Do</h2>
+                gEECS organizes a variety of social, professional, and academic events for our members. To check what
+                events we're holding, please check the calendar on our front page. For even more EECS events and
+                opportunities, please check the gEECS facebook page and our weekly member emails.
+                <br>
+                <br>
+                Learn more about
+                our past initiatives by clicking on the cards below.
+
             </div>
-          </section>
-          <section>
-          </div>
-        </core-animated-pages>
-    </div>
-    
-  </core-scroll-header-panel>
-  
-  <script>
+            <geecs-event-cards></geecs-event-cards>
+
+
+        </div>
+    </section>
+
+
+    <!--CONTACT US PAGE -->
+    <section>
+        <div class="card-container" layout center vertical>
+            <div class="card full" style="width: 100%" >
+                <h2> Get in Touch with gEECS</h2>
+                <p>
+                    Whether you'd like to tell us about an upcoming event, give us a helping hand, or just have a
+                    question,
+                    please send us an email at <a href="#"> geecs.officers@umich.edu</a>.
+                    <br> <br>
+                    Our office is located in room 1645 Betty Beyster Building (first floor of BBB across from staircase)
+                    on the University of Michigan North Campus.
+                </p>
+            </div>
+
+            <h2> Our Board Members</h2>
+            <div style= "max-width: 1200px; text-align: center;" >
+                <geecs-contact-list></geecs-contact-list>
+                <h2> Thank You to Our Advisors</h2>
+                <geecs-contact-list advisors></geecs-contact-list>
+            </div>
+        </div>
+    </section>
+
+
+    <!--SPONSOR US PAGE-->
+    <section>
+        <div class="card-container" layout vertical>
+            <div class="card full">
+                <h2>Become A Sponsor</h2>
+
+                Our members have had incredible opportunities through our sponsors. These range from talking with
+                industry representatives, to going to the Grace Hopper Conference. Our organization tries our very best
+                to provide everything free of cost to our members. In order to keep offering great resources and
+                opportunities, we rely on external financial support to acheive our mission.
+                <br>
+                <br>
+                If you have anyquestions, comments or concerns, please email us at geecs.officers@umich.edu. We'll be
+                happy to answer your question and walk you through the process.
+            </div>
+            <div class = "full" horizontal layout >
+                <div class="card half" vertical center-justified layout>
+                    <h3> Why</h3>
+                    For companies, sponsoring gEECS comes with additional benefits. These range from receving a resume
+                    book of all of our ~100 members, to being able to sponsor Meet & Greet events, to being featured on
+                    our website and weekly e-mails. We have a variety of sponsorship tiers, and more details can be
+                    found in our sponsorship guide below.
+                    <br>
+                    <a href="https://drive.google.com/a/umich.edu/file/d/0B3yHiZl6rLiVQm5BSWJ2ZGVXczA/view" target="_blank">
+                        <paper-button label="2015-16 Sponsor Guide" raisedButton style="width: 90%;">
+                            View Sponsor Guide</paper-button>
+                    </a>
+                </div>
+                <div class = "card half" vertical center-justified layout>
+                    <h3> How</h3>
+                    The process of becoming a sponsor is simple and secure. We are officially a University Sponsored
+                    Organiztion, which means that donations can be made through the University of Michigan website. We
+                    ask that sponsors fill out a short form before donating so we can get to know you and thank you.
+                    <br>
+                    <a href="https://docs.google.com/a/umich.edu/forms/d/1X7_h6oyTWTTx3SGo3vzt2dt3fW8l9LootEWJbvA1zvo/viewform" target="_blank">
+                        <paper-button label="DONATE" raisedButton style="width: 90%;"> </paper-button>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</core-animated-pages>
+</div>
+</core-scroll-header-panel>
+
+<script>
     var tabs = document.querySelector('paper-tabs');
 
     tabs.addEventListener('core-select', function() {
-      console.log(tabs.selected);
-      stuff(tabs.selected);
+        console.log(tabs.selected);
+        stuff(tabs.selected);
     });
-    
 
     function stuff(nextTab) {
-      var p = document.querySelector('core-animated-pages');
-      
-      // decide to slide right or left
-  
-      p.selected = nextTab;
+        var p = document.querySelector('core-animated-pages');
+        // decide to slide right or left
+        p.selected = nextTab;
     }
-  </script>
+</script>
 </body>
 </html>
